@@ -5,9 +5,6 @@ export interface Props {
   type: TIcon;
   size?: 'x-small' | 'small' | 'medium' | 'large' | 'x-large' | 'xx-large' | 'xxx-large';
   style?: CSSProperties;
-  lat?: number;
-  lng?: number;
-  text?: string;
   display?: 'block' | 'inline';
   className?: string;
   onClick?: () => void;

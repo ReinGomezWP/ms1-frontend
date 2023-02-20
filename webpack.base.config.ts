@@ -32,6 +32,13 @@ export const getBaseConfig = (env: EEnv): Configuration => ({
           fullySpecified: false,
         },
       },
+      {
+        test: /\.mdx?$/,
+        use: [
+          'babel-loader',
+          '@mdx-js/loader'
+        ]
+      },
       getRuleBabel(),
       getRuleTypeScript(),
       getRuleSass(env),
