@@ -1,11 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { Provider } from 'react-redux';
-import { store } from '@store/index';
-import { App } from '@containers/app';
-import { BrowserRouter } from 'react-router-dom';
+import { App } from '@containers/app'
+import { store } from '@store/index'
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import { Provider } from 'react-redux'
+import { BrowserRouter } from 'react-router-dom'
+import './i18n'
 
-const root = ReactDOM.createRoot(document.getElementById('root') as Element);
+const root = ReactDOM.createRoot(document.getElementById('root') as Element)
 
 root.render(
   <Provider store={store}>
@@ -15,4 +16,4 @@ root.render(
       </BrowserRouter>
     </React.StrictMode>
   </Provider>,
-);
+)

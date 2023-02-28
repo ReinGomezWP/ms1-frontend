@@ -1,12 +1,12 @@
-import { Configuration as WebpackConfiguration } from 'webpack';
-import { Configuration as WebpackDevServerConfiguration } from 'webpack-dev-server';
-import { EEnv, getBaseConfig } from './webpack.base.config';
+import { Configuration as WebpackConfiguration } from 'webpack'
+import { Configuration as WebpackDevServerConfiguration } from 'webpack-dev-server'
+import { EEnv, getBaseConfig } from './webpack.base.config'
 
 interface Configuration extends WebpackConfiguration {
-  devServer?: WebpackDevServerConfiguration;
+  devServer?: WebpackDevServerConfiguration
 }
 
-const baseConfig = getBaseConfig(EEnv.DEV);
+const baseConfig = getBaseConfig(EEnv.DEV)
 
 export const storybookWebpackConfig: Configuration = {
   ...baseConfig,
@@ -14,11 +14,8 @@ export const storybookWebpackConfig: Configuration = {
     rules: [
       {
         test: /\.mdx?$/,
-        use: [
-          'babel-loader',
-          '@mdx-js/loader'
-        ]
-      }
+        use: ['babel-loader', '@mdx-js/loader'],
+      },
     ],
   },
 }

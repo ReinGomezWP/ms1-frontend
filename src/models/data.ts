@@ -1,5 +1,5 @@
-import { ITodo } from './todos';
+import { ITodo } from './todos'
 
 export interface IData {
-  todos: ITodo[];
+  todos: ITodo[]
 }

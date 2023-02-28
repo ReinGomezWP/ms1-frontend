@@ -1,14 +1,17 @@
-import path from 'path';
-import { Configuration as WebpackConfiguration, HotModuleReplacementPlugin } from 'webpack';
-import { Configuration as WebpackDevServerConfiguration } from 'webpack-dev-server';
-import { EEnv, getBaseConfig } from './webpack.base.config';
+import path from 'path'
+import {
+  Configuration as WebpackConfiguration,
+  HotModuleReplacementPlugin,
+} from 'webpack'
+import { Configuration as WebpackDevServerConfiguration } from 'webpack-dev-server'
+import { EEnv, getBaseConfig } from './webpack.base.config'
 
 interface Configuration extends WebpackConfiguration {
-  devServer?: WebpackDevServerConfiguration;
+  devServer?: WebpackDevServerConfiguration
 }
 
-const buildDir = path.join(__dirname, 'build');
-const baseConfig = getBaseConfig(EEnv.DEV);
+const buildDir = path.join(__dirname, 'build')
+const baseConfig = getBaseConfig(EEnv.DEV)
 
 const config: Configuration = {
   ...baseConfig,
@@ -28,6 +31,6 @@ const config: Configuration = {
     open: true,
     hot: true,
   },
-};
+}
 
-export default config;
+export default config

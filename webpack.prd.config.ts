@@ -1,11 +1,11 @@
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import path from 'path';
-import webpack from 'webpack';
-import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
-import { EEnv, getBaseConfig } from './webpack.base.config';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import path from 'path'
+import webpack from 'webpack'
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
+import { EEnv, getBaseConfig } from './webpack.base.config'
 
-const buildDir = path.join(__dirname, 'build');
-const baseConfig = getBaseConfig(EEnv.PRD);
+const buildDir = path.join(__dirname, 'build')
+const baseConfig = getBaseConfig(EEnv.PRD)
 
 const config: webpack.Configuration = {
   ...baseConfig,
@@ -54,6 +54,6 @@ const config: webpack.Configuration = {
       },
     },
   },
-};
+}
 
-export default config;
+export default config

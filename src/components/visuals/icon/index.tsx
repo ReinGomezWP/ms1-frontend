@@ -1,16 +1,30 @@
-import React, { CSSProperties } from 'react';
-import styles from './style.scss';
+import React, { CSSProperties } from 'react'
+import styles from './style.scss'
 
 export interface Props {
-  type: TIcon;
-  size?: 'x-small' | 'small' | 'medium' | 'large' | 'x-large' | 'xx-large' | 'xxx-large';
-  style?: CSSProperties;
-  display?: 'block' | 'inline';
-  className?: string;
-  onClick?: () => void;
+  type: TIcon
+  size?:
+    | 'x-small'
+    | 'small'
+    | 'medium'
+    | 'large'
+    | 'x-large'
+    | 'xx-large'
+    | 'xxx-large'
+  style?: CSSProperties
+  display?: 'block' | 'inline'
+  className?: string
+  onClick?: () => void
 }
 
-export const Icon: React.FC<Props> = ({ display, size, type, className, style, onClick }) => {
+export const Icon: React.FC<Props> = ({
+  display,
+  size,
+  type,
+  className,
+  style,
+  onClick,
+}) => {
   const getClassNames = () => {
     return [
       styles.icon,
@@ -21,11 +35,11 @@ export const Icon: React.FC<Props> = ({ display, size, type, className, style, o
       className,
     ]
       .filter((style) => style)
-      .join(' ');
-  };
+      .join(' ')
+  }
 
-  return <div className={getClassNames()} style={style} onClick={onClick} />;
-};
+  return <div className={getClassNames()} style={style} onClick={onClick} />
+}
 
 export type TIcon =
   | 'home'
@@ -53,4 +67,4 @@ export type TIcon =
   | 'arrow-right'
   | 'circle-up'
   | 'make-group'
-  | 'mail4';
+  | 'mail4'

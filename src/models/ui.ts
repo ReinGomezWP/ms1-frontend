@@ -1,3 +1,3 @@
 export interface IUi {
-  isShowMessage: boolean;
+  isShowMessage: boolean
 }

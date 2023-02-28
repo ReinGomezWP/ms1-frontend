@@ -1,4 +1,4 @@
-import { RuleSetRule } from 'webpack';
+import { RuleSetRule } from 'webpack'
 
 export const getRuleBabel = (): RuleSetRule => ({
   test: /\.(ts|js|tsx)x?$/i,
@@ -6,8 +6,12 @@ export const getRuleBabel = (): RuleSetRule => ({
   use: {
     loader: 'babel-loader',
     options: {
-      presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript'],
+      presets: [
+        '@babel/preset-env',
+        '@babel/preset-react',
+        '@babel/preset-typescript',
+      ],
       plugins: ['@babel/plugin-transform-runtime'],
     },
   },
-});
+})

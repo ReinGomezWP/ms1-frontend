@@ -1,9 +1,9 @@
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import { RuleSetRule } from 'webpack';
-import { EEnv } from '../webpack.base.config';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import { RuleSetRule } from 'webpack'
+import { EEnv } from '../webpack.base.config'
 
 export const getRuleSass = (env: EEnv): RuleSetRule => {
-  const isDevMode = env === EEnv.DEV;
+  const isDevMode = env === EEnv.DEV
 
   return {
     test: /\.s[ac]ss$/,
@@ -33,5 +33,5 @@ export const getRuleSass = (env: EEnv): RuleSetRule => {
       },
     ],
     exclude: /node_modules/,
-  };
-};
+  }
+}

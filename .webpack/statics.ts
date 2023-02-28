@@ -1,4 +1,4 @@
-import { RuleSetRule } from 'webpack';
+import { RuleSetRule } from 'webpack'
 
 export const getRuleStatics = (): RuleSetRule => ({
   test: /\.(woff(2)?|ttf|eot|svg|png|jpg)(\?v=\d+\.\d+\.\d+)?$/,
@@ -13,4 +13,4 @@ export const getRuleStatics = (): RuleSetRule => ({
       },
     },
   ],
-});
+})

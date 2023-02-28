@@ -1,20 +1,20 @@
-import path from 'path';
+import path from 'path'
 
-import ESLintPlugin from 'eslint-webpack-plugin';
-import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
-import { Configuration as WebpackConfiguration } from 'webpack';
-import { Configuration as WebpackDevServerConfiguration } from 'webpack-dev-server';
-import { getRuleBabel } from './.webpack/babel';
-import { getRuleCss } from './.webpack/css';
-import { getExtensions } from './.webpack/extensions';
-import { getRuleSass } from './.webpack/sass';
-import { getRuleStatics } from './.webpack/statics';
-import { getRuleTypeScript } from './.webpack/typescript';
+import ESLintPlugin from 'eslint-webpack-plugin'
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
+import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin'
+import { Configuration as WebpackConfiguration } from 'webpack'
+import { Configuration as WebpackDevServerConfiguration } from 'webpack-dev-server'
+import { getRuleBabel } from './.webpack/babel'
+import { getRuleCss } from './.webpack/css'
+import { getExtensions } from './.webpack/extensions'
+import { getRuleSass } from './.webpack/sass'
+import { getRuleStatics } from './.webpack/statics'
+import { getRuleTypeScript } from './.webpack/typescript'
 
 interface Configuration extends WebpackConfiguration {
-  devServer?: WebpackDevServerConfiguration;
+  devServer?: WebpackDevServerConfiguration
 }
 
 export enum EEnv {
@@ -34,10 +34,7 @@ export const getBaseConfig = (env: EEnv): Configuration => ({
       },
       {
         test: /\.mdx?$/,
-        use: [
-          'babel-loader',
-          '@mdx-js/loader'
-        ]
+        use: ['babel-loader', '@mdx-js/loader'],
       },
       getRuleBabel(),
       getRuleTypeScript(),
@@ -47,7 +44,10 @@ export const getBaseConfig = (env: EEnv): Configuration => ({
     ],
   },
   resolve: {
-    modules: [path.resolve(__dirname, 'src'), path.resolve(__dirname, 'node_modules')],
+    modules: [
+      path.resolve(__dirname, 'src'),
+      path.resolve(__dirname, 'node_modules'),
+    ],
     extensions: getExtensions(),
     plugins: [
       new TsconfigPathsPlugin({
@@ -67,4 +67,4 @@ export const getBaseConfig = (env: EEnv): Configuration => ({
       extensions: ['js', 'jsx', 'ts', 'tsx'],
     }),
   ],
-});
+})

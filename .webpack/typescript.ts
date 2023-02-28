@@ -1,4 +1,4 @@
-import { RuleSetRule } from 'webpack';
+import { RuleSetRule } from 'webpack'
 
 export const getRuleTypeScript = (): RuleSetRule => ({
   test: /\.(ts|tsx)$/,
@@ -12,4 +12,4 @@ export const getRuleTypeScript = (): RuleSetRule => ({
     },
   ],
   exclude: /node_modules/,
-});
+})

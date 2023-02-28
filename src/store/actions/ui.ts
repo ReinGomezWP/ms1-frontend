@@ -1,11 +1,11 @@
-import { Action } from 'redux';
+import { Action } from 'redux'
 
 interface IActionToggleMessage extends Action {
-  type: 'TOGGLE_MESSAGE';
+  type: 'TOGGLE_MESSAGE'
 }
 
 export const toggleMessage = (): IActionToggleMessage => ({
   type: 'TOGGLE_MESSAGE',
-});
+})
 
-export type TActionsUi = IActionToggleMessage;
+export type TActionsUi = IActionToggleMessage

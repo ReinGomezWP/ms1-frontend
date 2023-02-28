@@ -1,11 +1,11 @@
-import React from 'react';
-import styles from './style.scss';
+import React from 'react'
+import styles from './style.scss'
 
 interface Props {
-  children: React.ReactNode;
-  type?: keyof JSX.IntrinsicElements;
-  size?: 'small' | 'regular' | 'large' | 'larger';
-  weight?: 'bold' | 'semi-bold' | 'normal';
+  children: React.ReactNode
+  type?: keyof JSX.IntrinsicElements
+  size?: 'small' | 'regular' | 'large' | 'larger'
+  weight?: 'bold' | 'semi-bold' | 'normal'
   color?:
     | 'alabaster'
     | 'zircon'
@@ -15,11 +15,11 @@ interface Props {
     | 'denim'
     | 'apple'
     | 'panache'
-    | 'red';
-  layout?: 'block' | 'inline' | 'flex-center';
-  className?: string;
-  onClick?: () => void;
-  bottomMargined?: boolean;
+    | 'red'
+  layout?: 'block' | 'inline' | 'flex-center'
+  className?: string
+  onClick?: () => void
+  bottomMargined?: boolean
 }
 
 export const TextDisplay: React.FC<Props> = ({
@@ -42,16 +42,16 @@ export const TextDisplay: React.FC<Props> = ({
     styles[`color-${color}`],
     onClick && styles.clickable,
     bottomMargined && styles['bottom-margined'],
-  ].join(' ');
+  ].join(' ')
 
-  const CustomTag = type as keyof JSX.IntrinsicElements;
+  const CustomTag = type as keyof JSX.IntrinsicElements
 
   return (
     <CustomTag className={textStyles} onClick={onClick}>
       {children}
     </CustomTag>
-  );
-};
+  )
+}
 
 TextDisplay.defaultProps = {
   size: 'regular',
@@ -60,4 +60,4 @@ TextDisplay.defaultProps = {
   layout: 'block',
   type: 'div',
   bottomMargined: false,
-};
+}
